@@ -1,0 +1,146 @@
+baseurl: https://example.com/
+languageCode: zh-cn
+theme: hugo-theme-stack
+title: ZHANGFAN
+copyright: BYZHANGFAN
+
+# Theme i18n support
+DefaultContentLanguage: zh-cn
+hasCJKLanguage: true
+
+languages:
+    zh-cn:
+        languageName: 中文
+        title: ZHANGFAN
+        weight: 1
+        params:
+            sidebar:
+                subtitle: 你好，我是一个自学者！
+
+services:
+    disqus:
+        shortname: "hugo-theme-stack"
+    googleAnalytics:
+        id:
+
+pagination:
+    pagerSize: 3
+
+permalinks:
+    post: /p/:slug/
+    page: /:slug/
+
+params:
+    mainSections:
+        - post
+    featuredImageField: image
+    rssFullContent: true
+    favicon: "/favicon.svg"
+
+    footer:
+        since: 2020
+        customText: ""
+
+    dateFormat:
+        published: Jan 02, 2006
+        lastUpdated: Jan 02, 2006 15:04 MST
+
+    sidebar:
+        emoji:
+        subtitle: 欢迎来到我的 Hugo 站点
+        avatar:
+            enabled: true
+            local: true
+            src: img/avatar.png
+
+    article:
+        math: false
+        toc: true
+        readingTime: false
+        license:
+            enabled: true
+            default: Licensed under CC BY-NC-SA 4.0
+
+    comments:
+        enabled: false
+        provider: disqus
+
+    widgets:
+        homepage:
+            - type: search
+            - type: archives
+              params:
+                  limit: 5
+            - type: categories
+              params:
+                  limit: 10
+            - type:
+              params:
+                  limit: 10
+        page:
+            - type: toc
+
+    colorScheme:
+        toggle: true
+        default: auto
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+menu:
+    main: []
+
+    social:
+        - identifier: 新片场
+          name: 新片场
+          url: https://www.xinpianchang.com/u10477926?from=navigator
+          params:
+              icon: brand-rumble
+
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com
+          params:
+              icon: brand-twitter
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        extensions:
+            passthrough:
+                enable: true
+                delimiters:
+                    block:
+                        - - \[
+                          - \]
+                        - - $$
+                          - $$
+                    inline:
+                        - - \(
+                          - \)
+        renderer:
+            unsafe: true
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
